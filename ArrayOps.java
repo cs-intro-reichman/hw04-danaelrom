@@ -26,7 +26,7 @@ public class ArrayOps {
        }
        int gap = max;
        for(int j = 0; j < array.length; j++){
-           if (max - array[j] < gap && max - array[j] != 0){
+           if (max - array[j] < gap){
                gap = max - array[j];
            }
        }
