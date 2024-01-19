@@ -37,6 +37,10 @@ public class StringOps {
         }
         for(int j = 0; j < lowers.length(); j++){
                 char currentNew = lowers.charAt(j);
+            /* 
+  		why didn't you create a helper isVowel()?
+		could be a lot cleaner
+  		*/
             if (vowels.indexOf(currentNew) != -1){
                 currentNew = (char)(currentNew - 32);
             }
