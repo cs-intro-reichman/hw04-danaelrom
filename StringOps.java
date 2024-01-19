@@ -22,21 +22,78 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String vowels = "aeiou" ;
+        String lowers = "";
+        String fixed = "";
+        for(int i = 0; i < string.length(); i++){
+            char current = string.charAt(i);
+            if(current > 'A' && current < 'Z'){
+                current = (char)(current + 32);
+            }
+            lowers += current;
+        }
+        for(int j = 0; j < lowers.length(); j++){
+                char currentNew = lowers.charAt(j);
+            if (vowels.indexOf(currentNew) != -1){
+                currentNew = (char)(currentNew - 32);
+            }
+            fixed += currentNew;
+            
+        }
+        return fixed;
     }
+    
 
+    
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+      String noSpace = "";
+      int index = 0;
+        while(string.charAt(index) == ' '){
+            index++;
+        }
+        char first = string.charAt(index);
+        if( first > 'A' && first < 'Z' ){
+            first = (char)(first + 32);
+        }
+        noSpace = noSpace + first;
+        for(int i = index + 1; i < string.length(); i++ ){
+            char check = string.charAt(i);
+            char before = string.charAt(i-1);
+            if(check != ' ' ){
+                if(before == ' '){
+                    if(check > 'a' && check < 'z'){
+                    check = (char)(check - 32);
+                    }
+                } else  if ( check > 'A' && check < 'Z'){
+                    check = (char)(check + 32);
+                }
+               noSpace = noSpace + check; 
+            } 
+            
+        }
+        return noSpace;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+       int count = 0;
+       for(int i = 0; i < string.length(); i++){
+           if(string.charAt(i) == chr){
+            count++;
+           }
+       }
+       int [] counter = new int[count];
+       int index = 0;
+        for(int j = 0; j < string.length(); j++ ){
+            if(string.charAt(j) == chr){
+                counter[index] = j;
+                index++;
+            }
+        }
+       
+        return counter;
+        
     }
 }
