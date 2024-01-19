@@ -50,7 +50,10 @@ public class ArrayOps {
                 break;
             }
         }
-       
+       /* 
+        this is an aggressive copy of code, you should have created a helper function,
+            we have functions so we do not need to copy-paste code
+            */
         for(int m = 0; m < array2.length; m++) {
             int count = 0;
             for (int n = 0; n < array1.length; n++) {
